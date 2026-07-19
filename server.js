@@ -2,7 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Function to serve HTML pages
 function servePage(res, filePath, statusCode) {
@@ -51,7 +51,7 @@ const server = http.createServer((req, res) => {
 
         servePage(
             res,
-            path.join(__dirname, "pages", "home.html"),
+            path.join(__dirname, "pages", "index.html"),
             200
         );
 
